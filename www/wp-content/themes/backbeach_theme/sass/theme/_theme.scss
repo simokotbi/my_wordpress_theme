@@ -1,0 +1,291 @@
+// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+$primary:#499af7;
+$primary-300:#1c4fbe;
+$secondary:#f1b637;
+$secondary-300:#FFB5A6;
+$darck:#010101;
+$sm: 540px;
+$md: 720px;
+$lg: 960px;
+$xl: 1140px;
+body {
+    font-family: "Source Sans Pro";
+    // font-family: "Pacifico";
+    font-size: 18px;
+}
+
+#wrapper-navbar {
+    .mobile-logo-holder {
+        text-align: center;
+        display: none;
+        @media (max-width: $md) {
+            display: block;
+        }
+    }
+    .top-header-holder {
+        max-height: 260px;
+        height: 70%;
+        padding: 50px 0;
+        @media (max-width: $md) {
+            padding: 25px 0;
+            .row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .col-4 {
+                display: none;
+            }
+        }
+        .navbar-toggler {
+            display: none;
+            @media (max-width: $lg) {
+                display: block;
+                height: auto;
+            }
+            .bar {
+                height: 3px;
+                border-radius: 4px;
+                margin-bottom: 8px;
+                background: rgba(#1f82f3, 0.5);
+            }
+            .menue-title {
+                font-size: 14px;
+                text-transform: uppercase;
+                margin-top: 8px;
+            }
+            padding: 0 1em;
+            &:hover {
+                background: rgba(#1f82f3, 0.1);
+            }
+        }
+        .container {
+            .logo-holder {
+                display: block;
+                @media (max-width: $lg) {
+                    width: 50%;
+                    .mobile-logo-holder {
+                        display: none;
+                    }
+                }
+            }
+            .social-media-holder,
+            .social-media-holder-tablet {
+                font-size: 50px;
+                a {
+                    color: $secondary;
+                    &:hover {
+                        color: darken($secondary, 10%);
+                    }
+                }
+                @media (max-width:$lg) {
+                    display: none;
+                }
+                &.social-media-holder-tablet {
+                    display: none;
+                    @media (max-width: $lg) {
+                        display: block;
+                        font-size: 18px;
+                    }
+                    @media (max-width:$md) {
+                        display: none;
+                    }
+                }
+            }
+            .contact-holder {
+                font-size: 18px;
+                a {
+                    display: inline-block;
+                    color: $darck;
+                    text-decoration: none;
+                    margin: 0.1em 1em;
+                    .fa {
+                        color: $secondary;
+                    }
+                }
+            }
+            .reservation-btn {
+                font-family: "Fredericka the Great";
+                border: 1px dotted $secondary;
+                font-size: 38px;
+                padding: 0.1em 0.5em;
+                display: inline-block;
+                transition: 0.5s ease all;
+                text-decoration: none;
+                color: $secondary;
+                &:hover {
+                    background-color: $secondary;
+                    color: #fff;
+                    cursor: pointer;
+                }
+                @media (max-width:$lg) {
+                    font-size: 16px;
+                    padding: 0.09em 0.25em;
+                }
+                @media (max-width:$md) {
+                    display: none;
+                    &.mobile {
+                        margin: 15px 0 0 0;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    // margin-bottom:-60px;
+    #main-nav {
+        border-bottom: 1px solid rgba(#5da8aa, 0.5);
+        border-top: 1px solid rgba(#5da8aa, 0.5);
+        padding: 0;
+        ul {
+            flex: 1;
+            justify-content: space-between;
+            li {
+                a {
+                    font-weight: 500;
+                    font-size: 22px;
+                    text-transform: uppercase;
+                    padding: 0.5em;
+                    @media (max-width: $xl) {
+                        font-size: 20px;
+                        padding: 0.2em;
+                    }
+                }
+                &.current_page_item {
+                    a {
+                        color: $secondary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.home-banner {
+    height: 800px;
+    background: #ccc;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-position: top center;
+    position: relative;
+    @media (max-width: $md) {
+        height: 400px;
+    }
+    &:after {
+        content: "";
+        display: block;
+        background: linear-gradient( to bottom, rgba(white, 0), rgba(white, 1));
+        height: 240px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+    h1 {
+        font-size: 100px;
+        font-weight: 700;
+        font-family: "Fredericka the Great";
+        color: $secondary;
+        @media (max-width: $md) {
+            font-size: 50px;
+        }
+    }
+}
+
+.home-call-to-action {
+    text-align: center;
+    .call-to-action {
+        border-radius: 50%;
+        padding-bottom: 100%;
+        background: $primary;
+        position: relative;
+        display: block;
+        margin: 20px 0;
+        @media (max-width: $md) {
+            width: 40%;
+            padding-bottom: 40%;
+            display: inline-block;
+        }
+        @media (max-width: $sm) {
+            width: 80%;
+            padding-bottom: 80%;
+            display: inline-block;
+        }
+        .image {
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            background-image: url(../img/ice-creame.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: ease 0.25s all;
+            opacity: 0.8;
+        }
+        &.second {
+            .image {
+                background-image: url(../img/bg.jpg);
+            }
+            background: $secondary;
+            .title {
+                background: $secondary;
+            }
+        }
+        &.third {
+            .title {
+                background: $primary;
+            }
+            background: $primary-300;
+        }
+        .title {
+            font-size: 25px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            background: $primary-300;
+            padding: 0.5em;
+            border: 2px dotted white;
+            border-radius: 10px;
+            text-align: center;
+            right: -15px;
+            color: white;
+        }
+        &:hover {
+            .title {
+                left: 20px;
+                cursor: pointer;
+                background: rgba(white, 0.8);
+                color: $primary;
+                &.second {
+                    background: rgba($secondary, 0.8);
+                    color: $primary;
+                }
+            }
+            .image {
+                top: 0px;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+                cursor: pointer;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.home-welcom {
+    h2 {
+        span {
+            font-family: 'Pacifico';
+            font-size: 160px;
+            color: $secondary-300;
+        }
+        font-family: 'Fredericka the Great';
+        font-size: 72px;
+    }
+}
